@@ -35,6 +35,15 @@
       justify-content: center;
       text-align: center;
     }
+    .role-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 
     .hero h1 {
       color: #38bdf8;
@@ -86,12 +95,257 @@
       background-color: #38bdf8;
     }
 
+    /* === Sección de contacto con degradado profesional === */
+#contact.bg-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a192f 100%) !important;
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/*------animacion bloque principal--------------------------------------------------------------*/
+
+/* === Hero principal con degradado y animación de fondo === */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a192f 100%);
+  color: #e2e8f0;
+  padding: 8rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Fondo animado sutil */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15), transparent 70%);
+  animation: heroGlow 12s linear infinite alternate;
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Título con degradado animado === */
+.role-title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  background: linear-gradient(270deg, #38bdf8, #818cf8, #06b6d4, #6366f1);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* === Subtítulo === */
+.hero .lead {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #cbd5e1;
+}
+
+/* === Botón moderno con efecto brillante === */
+.hero .btn-primary {
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.hero .btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+}
+
+/* === Animaciones === */
+@keyframes heroGlow {
+  from { transform: rotate(0deg) scale(1); opacity: 0.5; }
+  to { transform: rotate(360deg) scale(1.2); opacity: 0.8; }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  .role-title {
+    font-size: 1.9rem;
+  }
+  .hero .lead {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+
+
+
+
+/*------------------------------------------------------------*/
+
+
+
+/* Efecto de brillo animado en el fondo */
+#contact.bg-dark::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15), transparent 60%);
+  animation: contactGlow 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+#contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación del brillo */
+@keyframes contactGlow {
+  from { transform: rotate(0deg) scale(1); opacity: 0.6; }
+  to { transform: rotate(360deg) scale(1.2); opacity: 0.9; }
+}
+
+/* === Título con degradado animado === */
+#contact h2 {
+  font-weight: 700;
+  background: linear-gradient(270deg, #38bdf8, #818cf8, #06b6d4, #6366f1);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+/* === Botón con efecto de elevación === */
+#contact .btn-primary {
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
     footer {
       background-color: #0f172a;
       padding: 1rem;
       text-align: center;
       color: #94a3b8;
     }
+
+/*                                            */
+/* === Fondo degradado animado === */
+#about.bg-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a192f 100%) !important;
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+#about.bg-dark::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.12), transparent 70%);
+  animation: aboutGlow 10s linear infinite alternate;
+  z-index: 0;
+}
+
+#about .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Imagen de perfil con borde brillante === */
+.profile-img {
+  border-radius: 50%;
+  border: 3px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+}
+
+/* === Íconos sociales === */
+.social-icons a {
+  color: #38bdf8;
+  font-size: 1.8rem;
+  margin: 0 12px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #818cf8;
+  transform: translateY(-5px);
+}
+
+/* === Animación del fondo === */
+@keyframes aboutGlow {
+  from { transform: rotate(0deg) scale(1); opacity: 0.5; }
+  to { transform: rotate(360deg) scale(1.3); opacity: 0.8; }
+}
+
+/* === Responsividad === */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 140px;
+  }
+  #about p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------*/
 
     a {
       text-decoration: none;
@@ -225,7 +479,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container" data-aos="fade-up">
-      <h1>Administrador IT & Desarrollador</h1>
+      <h1 class="role-title">Administrador IT & Desarrollador</h1>
       <p class="lead mb-4">Optimizo sistemas, automatizo tareas y desarrollo soluciones seguras y eficientes.</p>
       <a href="#projects" class="btn btn-primary btn-lg">Ver proyectos</a>
     </div>
